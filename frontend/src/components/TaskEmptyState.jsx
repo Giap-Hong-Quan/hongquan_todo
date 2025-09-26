@@ -1,0 +1,27 @@
+import React from 'react'
+import { Card } from './ui/card'
+import { Circle } from 'lucide-react'
+
+const TaskEmptyState = ({filter}) => {
+  return (
+    <Card className='p-8 text-center border-0 bg-gradient-card shadow-custom-md'>
+        <div className='space-y-3'>
+            <Circle className='mx-auto size-12 text-muted-foreground'/>
+            <div>
+                <h3 className='font-medium text-foreground'>
+                    {
+                        filter==="active" ?"Không có nhiệm vụ nào đang làm":
+                        filter==="comlete"?"Chưa có nhiệm vụ nào hoàn thành":"Chưa có nhiệm vụ"
+                    }
+                </h3>
+                <p className='text-sm text-muted-foreground'>{
+                     filter==="active" ?"Đang làm ":
+                        filter==="comlete"?"Đã hoàn thành ":"Thêm nhiệm vụ đầu tiên vào để bắt đầu "
+                    }</p>
+            </div>
+        </div>
+    </Card>
+  )
+}
+
+export default TaskEmptyState
